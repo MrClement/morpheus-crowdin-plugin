@@ -50,7 +50,7 @@ class CrowdinProvider extends AbstractGlobalUIComponentProvider implements Local
 	
 	@Override
 	MorpheusContext getMorpheus() {
-		morpheusContext
+		this.morpheus
 	}
 
 	@Override

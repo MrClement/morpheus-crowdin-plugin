@@ -1,11 +1,9 @@
 <script type="text/javascript" nonce="{{this}}">
-    var req = new XMLHttpRequest();
-    req.open('GET', document.location, false);
-    req.send(null);
-    var languageCode = req.getResponseHeader('Content-Language').toLowerCase();
+    var languageCode = document.documentElement.lang.toLowerCase();
     if (languageCode == 'zy') {
         var _jipt = [];
-        _jipt.push(['project', 'morpheus']);
+        _jipt.push(['project', 'b625114881b983f78935c0c29396fee1']);
+        _jipt.push(['domain', 'hpe-morpheus']);
         _jipt.push(['preload_texts', true]);
         _jipt.push(['escape', function() {
           window.location.href = "/user-settings?lang=";
@@ -14,7 +12,8 @@
           window.dispatchEvent(new Event('resize')); //force resize to fix collapsed headers in Morpheus UI?
           return text
         }]);
-        $.getScript( "//cdn.crowdin.com/jipt/jipt.js").done(function(script, textStatus) {
-        });
+        var s = document.createElement('script');
+        s.src = '//cdn.crowdin.com/jipt/jipt.js';
+        document.head.appendChild(s);
     }
 </script>
